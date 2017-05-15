@@ -2,7 +2,7 @@
 while [ 1 ]
 do
 
-	if [ ! -z "$(ls -A $SYNC_DIR)" ]
+	if [ ! -z "$(ls -A $SYNC_DIR)" ]; then
 	  if ! [ "$ALLOW_OVERWRITE" = "true" ]; then
 			STATUS="$(svn --username "$SYNC_USER" --password "$SYNC_PASS" status -u "$SYNC_DIR" | grep -v Status)"
 		else
